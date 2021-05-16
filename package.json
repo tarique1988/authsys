@@ -1,9 +1,11 @@
 {
   "name": "authsys",
   "version": "0.0.1",
-  "description": "A simple auth system library",
+  "description": "A simple auth system",
   "main": "index.js",
   "scripts": {
+    "start": "ts-node ./src/index.ts",
+    "dev": "ts-node-dev ./src/index.ts",
     "test": "mocha"
   },
   "repository": {
@@ -25,5 +27,25 @@
   "bugs": {
     "url": "https://github.com/tarique1988/authsys/issues"
   },
-  "homepage": "https://github.com/tarique1988/authsys#readme"
+  "homepage": "https://github.com/tarique1988/authsys#readme",
+  "dependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/express": "^4.17.11",
+    "@types/jsonwebtoken": "^8.5.1",
+    "@types/node": "^15.3.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.9",
+    "ts-node": "^9.1.1",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.2.4"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.18",
+    "@types/mocha": "^8.2.2",
+    "chai": "^4.3.4",
+    "mocha": "^8.4.0"
+  }
 }
