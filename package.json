@@ -1,0 +1,29 @@
+{
+  "name": "authsys",
+  "version": "0.0.1",
+  "description": "A simple auth system library",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tarique1988/authsys.git"
+  },
+  "keywords": [
+    "authentication",
+    "nodejs",
+    "express",
+    "jwt",
+    "auth",
+    "tokens",
+    "web",
+    "tokens"
+  ],
+  "author": "Tarique Ali Mirza <tarique1988@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tarique1988/authsys/issues"
+  },
+  "homepage": "https://github.com/tarique1988/authsys#readme"
+}
