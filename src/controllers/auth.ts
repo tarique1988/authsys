@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import User, { IUser } from "../data/models/user";
 import { asyncHandler } from "../middlewares/async";
 import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
 import mongoose from "mongoose";
 import jsonResponseBuilder from "../utils/jsonResponseBuilder";
 import { CustomError } from "../utils/CustomError";
@@ -31,10 +32,16 @@ export const loginUser = asyncHandler(
   async (req: Request, res: Response, next: NextFunction) => {
     const { email, password } = req.body;
     const user = await User.findOne({
-      email,
-    });
+      email
+    }).select("password");
 
     if (!user) throw new CustomError("Custom", 401, "Invalid Credentials");
+
+    const isAuthenticated = await bcrypt.compare(password, user.password);
+
+    if (!isAuthenticated)
+      throw new CustomError("Custom", 401, "Invalid Credentials");
+    
     const token = jwt.sign(
       { id: user._id },
       process.env.JWT_SECRET as unknown as string,

@@ -6,7 +6,7 @@ import { CustomError } from "./utils/CustomError";
 const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded());
 app.use("/api/v1/", indexRouter);
 app.use("*", () => {
   throw new CustomError("Custom", 404, "Page not found!");
